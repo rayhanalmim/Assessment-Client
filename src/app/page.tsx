@@ -3,6 +3,7 @@ import WalletConnect from "src/components/WalletConnect";
 import PaymentForm from "src/components/PaymentForm";
 import { useState } from "react";
 import { ethers } from "ethers";
+import Lottery from "src/components/Lottery";
 
 export default function Home() {
 
@@ -21,6 +22,7 @@ export default function Home() {
         <div className="min-h-screen flex flex-col items-center justify-center space-y-8">
           <WalletConnect onWalletConnect={handleWalletConnect} />
           <PaymentForm provider={provider} />
+          {provider && <Lottery provider={provider} />}
         </div>
       </div>
     </div>
